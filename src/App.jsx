@@ -20,12 +20,12 @@ export const App = () => {
   const [selectedGood, setSelectedGood] = useState('Jam');
   const [selection, setSelection] = useState('Jam is selected');
 
-  const handleAddButtonClick = good => {
+  const addGood = good => {
     setSelectedGood(good);
     setSelection(`${good} is selected`);
   };
 
-  const handleRemoveButtonClick = () => {
+  const removeGood = () => {
     setSelectedGood('');
     setSelection('No goods selected');
   };
@@ -39,7 +39,7 @@ export const App = () => {
             data-cy="ClearButton"
             type="button"
             className="delete ml-3"
-            onClick={handleRemoveButtonClick}
+            onClick={removeGood}
           />
         )}
 
@@ -57,7 +57,7 @@ export const App = () => {
                         data-cy="RemoveButton"
                         type="button"
                         className="button is-info"
-                        onClick={handleRemoveButtonClick}
+                        onClick={removeGood}
                       >
                         -
                       </button>
@@ -74,7 +74,7 @@ export const App = () => {
                         data-cy="AddButton"
                         type="button"
                         className="button"
-                        onClick={() => handleAddButtonClick(good)}
+                        onClick={() => addGood(good)}
                       >
                         +
                       </button>
